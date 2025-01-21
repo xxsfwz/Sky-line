@@ -1,0 +1,109 @@
+/* 通用样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+    color: white;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+}
+
+header h1 {
+    font-size: 3rem;
+    color: #fff;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #ccc;
+}
+
+/* 建筑板块 */
+.building-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.building {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.building-left, .building-right {
+    flex: 1;
+    padding: 20px;
+}
+
+.building-left {
+    padding-right: 40px;
+}
+
+.building-right {
+    padding-left: 40px;
+}
+
+.building h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.building-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+h3 {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+/* 街景展示 */
+.street-view iframe {
+    width: 100%;
+    height: 400px;
+}
+
+/* 页脚 */
+footer {
+    background-color: #333;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    color: white;
+}
+/* 响应式设计 */
+@media (max-width: 768px) {
+    main {
+        padding: 40px 5%;
+    }
+
+    .building-section {
+        justify-content: center;
+    }
+
+    .building {
+        flex: 1 1 100%;  /* 在小屏设备上让每个建筑项占满整个宽度 */
+    }
+}

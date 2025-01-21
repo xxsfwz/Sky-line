@@ -1,0 +1,94 @@
+/* 全局样式 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+/* 页头 */
+header {
+    text-align: center;
+    padding: 50px 0;
+    background-color: #333;
+}
+
+header h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+header p {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+
+/* 主内容区域 */
+main {
+    padding: 40px 10%;
+}
+
+.building-section {
+    display: flex;
+    flex-wrap: wrap;  /* 允许换行 */
+    justify-content: space-between;  /* 控制项目之间的间距 */
+    gap: 20px; /* 控制每个建筑项之间的间距 */
+}
+
+/* 单个建筑项 */
+.building {
+    flex: 1 1 30%;  /* 每个建筑项占据30%的宽度，并且具有伸缩性 */
+    text-align: center;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+    box-sizing: border-box;  /* 确保padding不影响宽度 */
+}
+
+.building:hover {
+    transform: scale(1.05);  /* 鼠标悬停时放大 */
+}
+
+.building img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.building h2 {
+    font-size: 1.8em;
+    margin: 20px 0;
+}
+
+.building p {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+/* 页脚 */
+footer {
+    background-color: #333;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    color: white;
+    font-size: 1em;
+}
+/* 响应式设计 */
+@media (max-width: 768px) {
+    main {
+        padding: 40px 5%;
+    }
+
+    .building-section {
+        justify-content: center;
+    }
+
+    .building {
+        flex: 1 1 100%;  /* 在小屏设备上让每个建筑项占满整个宽度 */
+    }
+}

@@ -1,0 +1,237 @@
+/* 通用样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: #fff;
+    line-height: 1.6;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background: transparent; /* 取消固定的半透明背景 */
+    box-shadow: none; /* 去掉之前的固定阴影 */
+    position: relative;
+}
+
+/* 为 header 区域添加霓虹渐变光晕 */
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255, 0, 150, 0.5), rgba(0, 216, 255, 0.5));
+    filter: blur(20px); /* 霓虹光晕的模糊程度 */
+    z-index: -1; /* 使背景发光在内容后面 */
+    animation: neonGlow 6s infinite alternate; /* 动态渐变 */
+    border-radius: 15px; /* 可选，圆角区域 */
+}
+
+/* 动态光晕渐变 */
+@keyframes neonGlow {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+
+
+header h1 {
+    font-size: 3.5rem; /* 保持字体大小 */
+    color: #ffffff; /* 白色文字 */
+    font-family: 'Orbitron', sans-serif; /* 科技感字体 */
+    text-shadow: 
+        0 0 5px rgba(255, 255, 255, 0.6), /* 减小光晕半径，降低亮度 */
+        0 0 10px rgba(255, 255, 255, 0.4),
+        0 0 20px rgba(0, 216, 255, 0.3),
+        0 0 40px rgba(0, 216, 255, 0.2); /* 减弱远光层 */
+    letter-spacing: 3px; /* 字间距不变 */
+}
+
+
+
+
+
+
+
+header p {
+    font-size: 1.2rem;
+    color: #ccc;
+}
+
+/* 导航栏样式 */
+nav {
+    background: rgba(0, 0, 0, 0.8); /* 半透明黑色背景 */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 增加阴影效果 */
+    border-radius: 10px; /* 圆角设计 */
+    position: sticky; /* 让导航栏固定在页面顶部 */
+    top: 0;
+    z-index: 100; /* 确保导航栏始终在最前 */
+}
+
+/* 导航栏链接列表 */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+/* 导航链接样式 */
+nav ul li a {
+    text-decoration: none;
+    color: #00d8ff; /* 霓虹蓝字体颜色 */
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase; /* 全部大写 */
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out; /* 平滑过渡 */
+}
+
+/* 鼠标悬停效果 */
+nav ul li a:hover {
+    background: linear-gradient(90deg, #ff00ff, #00d8ff); /* 渐变背景 */
+    color: #ffffff; /* 白色文字 */
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.6), 0 0 20px rgba(0, 216, 255, 0.6); /* 发光效果 */
+    transform: scale(1.1); /* 鼠标悬停时略微放大 */
+}
+
+/* 当前页面的活动链接（可选） */
+nav ul li a.active {
+    background: linear-gradient(90deg, #ff00ff, #00d8ff); /* 渐变背景 */
+    color: #ffffff;
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.6), 0 0 20px rgba(0, 216, 255, 0.6);
+}
+
+
+/* 网格容器布局 */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 左边三列等宽 */
+    grid-template-rows: repeat(2, auto); /* 两行自动高度 */
+    gap: 20px; /* 网格间距 */
+}
+
+/* 网格容器 */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) 1fr; /* 左边三列等宽，右边一列为中东 */
+    grid-template-rows: repeat(2, auto); /* 两行自动高度 */
+    gap: 20px; /* 网格间距 */
+}
+
+/* 默认块样式 */
+.grid-item {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+    transition: all 0.4s ease-in-out; /* 添加过渡动画，适用于进入和离开 */
+}
+
+/* 中东板块样式 */
+.grid-item.wide {
+    grid-column: 4 / 5; /* 固定到第四列 */
+    grid-row: 1 / span 2; /* 横跨两行 */
+}
+
+/* 图片样式 */
+.grid-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+
+
+/* 鼠标悬停时的样式 */
+.grid-item:hover {
+    background: rgba(0, 0, 0, 0.8); /* 鼠标悬停时稍微变暗 */
+    transform: scale(1.05); /* 鼠标悬停时略微放大 */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* 鼠标悬停时增强阴影 */
+    transition: all 0.4s ease-in-out; /* 将动画时间调慢为0.6秒 */
+}
+
+
+.grid-item h2 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: #00d8ff;
+    font-size: 1.5rem; /* 调整中文标题大小 */
+    line-height: 1.2; /* 缩小行间距 */
+}
+
+.grid-item p {
+    font-size: 1rem;
+    color: #ddd;
+}
+
+.grid-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
+/* 页脚 */
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #333;
+    color: #ccc;
+    margin-top: 20px;
+}
+/* 霓虹动态背景 */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255,0,150,0.5), rgba(0,204,255,0.5));
+    background-size: 200% 200%;
+    animation: neonFlow 6s infinite alternate;
+    z-index: -1; /* 确保背景在内容后面 */
+}
+
+/* 动画效果 */
+@keyframes neonFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+/* 响应式设计 */
+@media (max-width: 768px) {
+    main {
+        padding: 40px 5%;
+    }
+
+    .building-section {
+        justify-content: center;
+    }
+
+    .building {
+        flex: 1 1 100%;  /* 在小屏设备上让每个建筑项占满整个宽度 */
+    }
+}
